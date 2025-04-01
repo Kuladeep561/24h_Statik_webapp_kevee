@@ -1,0 +1,30 @@
+require("dotenv").config();
+let {
+  JWT_KEY,
+  PORT,
+  GRAPH_CLIENTID,
+  GRAPH_CLIENTSECRET,
+  GRAPH_TENANTID,
+  SHAREPOINT_SITEID,
+  SHAREPOINT_PARENTITEM,
+  EMAIL,
+  ADOBE_CLIENTID,
+  ADOBE_CLIENTSECRET,
+} = process.env;
+if (!PORT || !GRAPH_CLIENTID || !GRAPH_CLIENTSECRET || !GRAPH_TENANTID || !SHAREPOINT_SITEID || !ADOBE_CLIENTID) {
+  console.warn("Missing some of the environment variables.");
+  process.exit(1);
+}
+
+module.exports = {
+  JWT_KEY,
+  PORT,
+  GRAPH_CLIENTID,
+  GRAPH_CLIENTSECRET,
+  GRAPH_TENANTID,
+  SHAREPOINT_SITEID,
+  SHAREPOINT_PARENTITEM,
+  EMAIL,
+  ADOBE_CLIENTID,
+  ADOBE_CLIENTSECRET,
+};
